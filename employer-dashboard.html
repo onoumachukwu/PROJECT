@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Employer Dashboard | PRIVATE</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="dashboard-header">
+    <h1>PRIVATE</h1>
+    <nav>
+      <a href="#">Dashboard</a>
+      <a href="#">Support</a>
+      <a href="index.html">Logout</a>
+    </nav>
+  </header>
+
+  <div class="dashboard-container">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <ul>
+        <li><a href="employer-dashboard.html" class="active">Dashboard</a></li>
+        <li><a href="employer-postjob.html">Post a Job</a></li>
+        <li><a href="employer-my-hires.html">My Hires</a></li>
+        <li><a href="employer-browse-drivers.html">Browse Drivers</a></li>
+        <li><a href="employer-messages.html">Messages</a></li>
+        <li><a href="employer-settings.html">Settings</a></li>
+      </ul>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <section class="profile">
+        <div class="profile-card">
+          <div class="avatar"></div>
+          <div>
+            <h2>Brightline Logistics Ltd</h2>
+            <p>Registered Employer</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Post a Job Section -->
+      <section class="post-job">
+        <h3>Post a Job</h3>
+        <form class="job-form">
+          <label for="jobTitle">Job Title</label>
+          <input type="text" id="jobTitle" name="jobTitle" placeholder="e.g. Daily Driver or Logistics Driver" required>
+
+          <label for="duration">Duration</label>
+          <input type="text" id="duration" name="duration" placeholder="e.g. 1 week, 1 month" required>
+
+          <label for="payRange">Pay Range</label>
+          <input type="text" id="payRange" name="payRange" placeholder="e.g. ₦50,000 - ₦70,000" required>
+
+          <label for="location">Location</label>
+          <input type="text" id="location" name="location" placeholder="e.g. Ikeja, Lagos" required>
+
+          <label for="description">Job Description</label>
+          <textarea id="description" name="description" rows="4" placeholder="Briefly describe the job"></textarea>
+
+          <button type="submit" class="btn green">Post Job</button>
+        </form>
+      </section>
+
+      <!-- Job Feed -->
+      <section class="job-list-section">
+        <h3>My Recent Job Posts</h3>
+        <div class="job-list">
+          <div class="job-card">
+            <h4>Executive Driver Needed</h4>
+            <p><strong>Location:</strong> Lekki, Lagos</p>
+            <p><strong>Duration:</strong> Monthly</p>
+            <p><strong>Pay Range:</strong> ₦100,000 - ₦120,000</p>
+            <button class="btn gray">View Applicants</button>
+          </div>
+          <div class="job-card">
+            <h4>Travel Driver (Weekend)</h4>
+            <p><strong>Location:</strong> Abuja</p>
+            <p><strong>Duration:</strong> 2 days</p>
+            <p><strong>Pay Range:</strong> ₦40,000</p>
+            <button class="btn gray">View Applicants</button>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <footer>
+    <p>© 2025 PRIVATE | Built by Michael Okwudiba</p>
+  </footer>
+<script src="script.js"></script>
+
+
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Employer Sign Up</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>PRIVATE</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="driver.html">Drivers</a>
+    </nav>
+  </header>
+
+  <!-- Sign Up Section -->
+   <section class="auth-container">
+    <h2>New Employer? Sign Up</h2>
+    <form action="employer-dashboard.html" method="POST">
+      <label for="business-name">Business Name</label>
+      <input type="text" id="business-name" name="business_name" placeholder="Enter your business name" required>
+
+      <label for="signup-email">Business Email</label>
+      <input type="email" id="signup-email" name="email" placeholder="Enter your business email" required>
+
+      <label for="signup-password">Create Password</label>
+      <input type="password" id="signup-password" name="password" placeholder="Create a password" required>
+
+      <div class="auth-links">
+        <a href="forget-password.html" class="highlight small-text">Forgot Password?</a>
+      </div>
+
+      <button type="submit" class="btn green">Sign Up</button>
+    </form>
+
+    <p>Already have an account? <a href="employer-login.html" class="highlight">Login</a></p>
+
+    <hr style="margin: 30px 0; border-color: #2a2a2a;">
+  </section>
+
+  <footer>
+    <p>© 2025 Private | All rights reserved.</p>
+  </footer>
+  <script src="script.js"></script>
+
+</body>
+</html>

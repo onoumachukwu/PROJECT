@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Employer Login / Sign Up</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>PRIVATE</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="driver-login.html">Drivers</a>
+    </nav>
+  </header>
+
+  <section class="auth-container">
+    <!-- Login Section -->
+    <h2>Employer Login</h2>
+    <form action="employer-dashboard.html" method="GET">
+      <label for="login-email">Business Email</label>
+      <input type="email" id="login-email" name="email" placeholder="Enter your business email" required>
+
+      <label for="login-password">Password</label>
+      <input type="password" id="login-password" name="password" placeholder="Enter your password" required>
+
+      <div class="auth-links">
+        <a href="forgot-password.html" class="highlight small-text">Forgot Password?</a>
+      </div>
+
+      <button type="submit" class="btn green">Login</button>
+
+
+    </form>
+
+    <p>Don't have an account? <a href="employer-signup.html" class="highlight">Sign Up</a></p>
+
+    <p style="margin-top: 25px; color: #ccc;">
+      Are you a single user? 
+      <a href="single-user-signup.html" class="highlight">Click here to sign up and order a driver</a>
+    </p>
+
+
+    <hr style="margin: 30px 0; border-color: #2a2a2a;">
+
+    
+  </section>
+
+  <footer>
+    <p>© 2025 Private | All rights reserved.</p>
+  </footer>
+  <script src="script.js"></script>
+
+</body>
+</html>

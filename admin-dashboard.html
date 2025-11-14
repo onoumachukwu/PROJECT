@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard | PRIVATE</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="dashboard-header">
+    <h1>PRIVATE</h1>
+    <nav>
+      <a href="#">Admin Dashboard</a>
+      <a href="#">Support</a>
+      <a href="index.html">Logout</a>
+    </nav>
+  </header>
+
+  <div class="dashboard-container">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <ul>
+        <li><a href="#" class="active">Overview</a></li>
+        <li><a href="#">Manage Drivers</a></li>
+        <li><a href="#">Manage Employers</a></li>
+        <li><a href="#">Approve Job Posts</a></li>
+        <li><a href="#">Reports & Complaints</a></li>
+        <li><a href="#">Payments</a></li>
+        <li><a href="#">Settings</a></li>
+      </ul>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+
+      <!-- Analytics Overview -->
+      <section class="analytics-section">
+        <h2>Platform Overview</h2>
+        <div class="analytics-grid">
+          <div class="analytics-card">
+            <h3>Total Hires</h3>
+            <p class="stat">1,245</p>
+          </div>
+          <div class="analytics-card">
+            <h3>Active Users</h3>
+            <p class="stat">3,582</p>
+          </div>
+          <div class="analytics-card">
+            <h3>Top City</h3>
+            <p class="stat">Lagos</p>
+          </div>
+          <div class="analytics-card">
+            <h3>Pending Payments</h3>
+            <p class="stat">₦540,000</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Manage Drivers -->
+      <section class="manage-section">
+        <h2>Manage Drivers</h2>
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>License No.</th>
+              <th>Status</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>John Okafor</td>
+              <td>DL-44211</td>
+              <td><span class="status verified">Verified</span></td>
+              <td>
+                <button class="btn gray">Suspend</button>
+              </td>
+            </tr>
+            <tr>
+              <td>David Eze</td>
+              <td>DL-99882</td>
+              <td><span class="status pending">Pending</span></td>
+              <td>
+                <button class="btn green">Approve</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <!-- Manage Employers -->
+      <section class="manage-section">
+        <h2>Manage Employers</h2>
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Company</th>
+              <th>Contact</th>
+              <th>Status</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Brightline Logistics Ltd</td>
+              <td>info@brightline.com</td>
+              <td><span class="status verified">Active</span></td>
+              <td><button class="btn gray">Suspend</button></td>
+            </tr>
+            <tr>
+              <td>SwiftRides Co.</td>
+              <td>contact@swiftrides.com</td>
+              <td><span class="status pending">Pending</span></td>
+              <td><button class="btn green">Approve</button></td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <!-- Reports -->
+      <section class="manage-section">
+        <h2>User Complaints & Reports</h2>
+        <div class="report-card">
+          <h4>Report #102</h4>
+          <p><strong>From:</strong> Employer - Brightline Logistics</p>
+          <p><strong>Against:</strong> Driver - John Okafor</p>
+          <p><strong>Issue:</strong> Late arrival and poor communication</p>
+          <button class="btn gray">Mark Resolved</button>
+        </div>
+      </section>
+
+      <!-- Payments -->
+      <section class="manage-section">
+        <h2>Payment Management</h2>
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Transaction ID</th>
+              <th>User</th>
+              <th>Amount</th>
+              <th>Status</th>
+              <th>Date</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>#PAY20344</td>
+              <td>Brightline Logistics</td>
+              <td>₦120,000</td>
+              <td><span class="status verified">Completed</span></td>
+              <td>Nov 10, 2025</td>
+            </tr>
+            <tr>
+              <td>#PAY20387</td>
+              <td>SwiftRides Co.</td>
+              <td>₦50,000</td>
+              <td><span class="status pending">Pending</span></td>
+              <td>Nov 12, 2025</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+    </main>
+  </div>
+
+  <footer>
+    <p>© 2025 PRIVATE | Admin Control Panel</p>
+  </footer>
+
+  <script>
+  // Simulated Admin Action Controls
+  document.addEventListener("DOMContentLoaded", function () {
+    // Handle Approve and Suspend buttons
+    document.querySelectorAll(".btn.green, .btn.gray").forEach((btn) => {
+      btn.addEventListener("click", function () {
+        const row = this.closest("tr");
+        const statusCell = row.querySelector(".status");
+
+        if (this.classList.contains("green")) {
+          statusCell.textContent = "Verified";
+          statusCell.className = "status verified";
+          this.textContent = "Suspend";
+          this.className = "btn gray";
+        } else {
+          statusCell.textContent = "Suspended";
+          statusCell.className = "status pending";
+          this.textContent = "Approve";
+          this.className = "btn green";
+        }
+      });
+    });
+
+    // Handle report resolution
+    document.querySelectorAll(".report-card .btn.gray").forEach((btn) => {
+      btn.addEventListener("click", function () {
+        this.textContent = "Resolved";
+        this.classList.remove("gray");
+        this.classList.add("green");
+        this.disabled = true;
+        this.style.opacity = "0.7";
+      });
+    });
+
+    // Simulate payment status toggle
+    document.querySelectorAll(".data-table tbody tr").forEach((row) => {
+      const status = row.querySelector(".status");
+      if (status && status.classList.contains("pending")) {
+        row.addEventListener("dblclick", function () {
+          status.textContent = "Completed";
+          status.classList.remove("pending");
+          status.classList.add("verified");
+        });
+      }
+    });
+  });
+</script>
+
+
+</body>
+</html>

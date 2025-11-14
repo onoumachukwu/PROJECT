@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Order Confirmation | PRIVATE</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>PRIVATE</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="driver.html">Drivers</a>
+      <a href="employer-login.html">Employers</a>
+    </nav>
+  </header>
+
+  
+
+  <section class="auth-container">
+    <div class="confirmation-box">
+      <h2>Order Confirmed ✅</h2>
+      <p>Thank you for booking with <strong>PRIVATE</strong>.</p>
+      <p>Your driver request has been received successfully.</p>
+
+      <div class="summary">
+        <h3>Booking Summary</h3>
+        <p><strong>Service Type:</strong> Daily Driver</p>
+        <p><strong>Pickup Location:</strong> Lagos Mainland</p>
+        <p><strong>Drop-off Location:</strong> Victoria Island</p>
+        <p><strong>Date:</strong> 15th Nov 2025</p>
+        <p><strong>Time:</strong> 9:00 AM</p>
+      </div>
+
+      <p>Our team will contact you shortly to confirm details and assign a driver.</p>
+
+      <div class="confirmation-actions">
+        <a href="order-driver.html" class="btn green">Book Another Driver</a>
+        <a href="index.html" class="btn outline">Return Home</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2025 Private | All rights reserved.</p>
+  </footer>
+
+  <script>
+  // Retrieve booking details from localStorage
+  const data = JSON.parse(localStorage.getItem("bookingData"));
+
+  if (data) {
+    document.querySelector(".summary").innerHTML = `
+      <h3>Booking Summary</h3>
+      <p><strong>Service Type:</strong> ${data.serviceType}</p>
+      <p><strong>Pickup Location:</strong> ${data.pickup}</p>
+      <p><strong>Drop-off Location:</strong> ${data.dropoff}</p>
+      <p><strong>Date:</strong> ${data.date}</p>
+      <p><strong>Time:</strong> ${data.time}</p>
+    `;
+  } else {
+    document.querySelector(".summary").innerHTML = `
+      <h3>No booking data found</h3>
+      <p>Please go back and make a booking.</p>
+    `;
+  }
+</script>
+
+</body>
+</html>

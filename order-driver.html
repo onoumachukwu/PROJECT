@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Order a Driver | PRIVATE</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>PRIVATE</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="driver.html">Drivers</a>
+      <a href="employer-login.html">Employers</a>
+    </nav>
+  </header>
+
+ <section class="auth-container">
+  <h2>Order a Driver</h2>
+  <form id="bookingForm">
+    <label for="serviceType">Select Driver Type</label>
+    <select id="serviceType" name="serviceType" required>
+      <option value="">-- Choose Service Type --</option>
+      <option value="Daily Driver">Daily Driver</option>
+      <option value="Weekly Driver">Weekly Driver</option>
+      <option value="Intercity / Travel Driver">Intercity / Travel Driver</option>
+      <option value="Event or Occasion Driver">Event or Occasion Driver</option>
+    </select>
+
+    <label for="pickup">Pickup Location</label>
+    <input type="text" id="pickup" name="pickup" placeholder="Enter pickup address" required>
+
+    <label for="dropoff">Drop-off Location</label>
+    <input type="text" id="dropoff" name="dropoff" placeholder="Enter drop-off address" required>
+
+    <label for="date">Select Date</label>
+    <input type="date" id="date" name="date" required>
+
+    <label for="time">Select Time</label>
+    <input type="time" id="time" name="time" required>
+
+    <label for="notes">Additional Notes (Optional)</label>
+    <textarea id="notes" name="notes" rows="3" placeholder="Add any extra details or requests"></textarea>
+
+    <button type="submit" class="btn green">Confirm Booking</button>
+  </form>
+</section>
+
+
+  <footer>
+    <p>© 2025 Private | All rights reserved.</p>
+  </footer>
+
+  <script>
+  // Capture booking details and store in localStorage
+  const bookingForm = document.querySelector("form");
+  bookingForm.addEventListener("submit", (e) => {
+    e.preventDefault();
+
+    const serviceType = document.querySelector("#serviceType").value;
+    const pickup = document.querySelector("#pickup").value;
+    const dropoff = document.querySelector("#dropoff").value;
+    const date = document.querySelector("#date").value;
+    const time = document.querySelector("#time").value;
+
+    const bookingData = { serviceType, pickup, dropoff, date, time };
+    localStorage.setItem("bookingData", JSON.stringify(bookingData));
+
+    // Redirect to confirmation page
+    window.location.href = "order-confirmation.html";
+  });
+</script>
+
+</body>
+</html>
